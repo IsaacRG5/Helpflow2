@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: support-ticket-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/helpflow}
+    username: ${DB_USER:helpflow}
+    password: ${DB_PASSWORD:change_me_locally}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+server:
+  port: ${SERVER_PORT:8080}
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-this-secret-key-to-a-random-value-at-least-32-bytes-long}
+  dispatch:
+    url: ${DISPATCH_URL:http://localhost:8081}
+  sla:
+    monitor-delay-ms: ${SLA_MONITOR_DELAY_MS:60000}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: HelpFlow Support Ticket Service
+    version: 0.0.1-SNAPSHOT
+logging:
+  pattern:
+    level: "%5p [traceId=%X{traceId:-}]"

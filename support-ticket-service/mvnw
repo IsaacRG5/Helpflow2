@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+MAVEN_VERSION=3.9.9
+MAVEN_HOME="${HOME}/.maven/apache-maven-${MAVEN_VERSION}"
+if [ ! -x "${MAVEN_HOME}/bin/mvn" ]; then
+  mkdir -p "${HOME}/.maven"
+  ARCHIVE="${TMPDIR:-/tmp}/apache-maven-${MAVEN_VERSION}-bin.tar.gz"
+  curl -fL "https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" -o "$ARCHIVE"
+  tar -xzf "$ARCHIVE" -C "${HOME}/.maven"
+fi
+exec "${MAVEN_HOME}/bin/mvn" "$@"
