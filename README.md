@@ -253,3 +253,5 @@ Logging estructurado JSON (`logging.structured.format.console=logstash`, Spring 
 ## 10. Entregables y evidencias
 - Colección Postman: `postman/HelpFlow.postman_collection.json` · Swagger: `/swagger-ui.html`.
 - Capturas de pruebas, métricas, tickets vencidos y logs: ver `docs/evidencias/README.md` (comandos para generarlas) y guardar las imágenes en esa carpeta.
+#   H e l p f l o w 2  
+ 
