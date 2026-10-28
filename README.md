@@ -250,8 +250,4 @@ Logging estructurado JSON (`logging.structured.format.console=logstash`, Spring 
 - **Unitarias (JUnit + Mockito):** `TicketTest`, `AssignmentPolicyTest`, `PoliciesTest`, `CreateTicketServiceTest` (con mock de `TechnicianDispatchPort`), `TransitionAndEscalationTest`, y `DispatchServiceTest` / `DispatchControllerTest`.
 - **Integración (Spring Boot Test + MockMvc + Testcontainers/PostgreSQL):** `SupportTicketApiTest` cubre registro, JWT, ProblemDetail, propiedad de tickets, flujo técnico completo, reasignación, SLA, escalamiento y métricas.
 
-## 10. Entregables y evidencias
-- Colección Postman: `postman/HelpFlow.postman_collection.json` · Swagger: `/swagger-ui.html`.
-- Capturas de pruebas, métricas, tickets vencidos y logs: ver `docs/evidencias/README.md` (comandos para generarlas) y guardar las imágenes en esa carpeta.
-#   H e l p f l o w 2  
- 
+https://github.com/IsaacRG5/Helpflow2.git
